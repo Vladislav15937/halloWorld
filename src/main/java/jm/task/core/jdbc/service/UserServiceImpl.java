@@ -7,7 +7,6 @@ import jm.task.core.jdbc.model.User;
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
-    private UserDaoJDBCImpl userDaoJDBC = new UserDaoJDBCImpl();
     private UserDaoHibernateImpl userDaoHibernate = new UserDaoHibernateImpl();
 
     @Override
@@ -17,7 +16,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void dropUsersTable() {
-
         userDaoHibernate.dropUsersTable();
     }
 
@@ -30,18 +28,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public void removeUserById(long id) {
         userDaoHibernate.removeUserById(id);
-
     }
 
     @Override
     public List<User> getAllUsers() {
-
         return userDaoHibernate.getAllUsers();
     }
 
     @Override
     public void cleanUsersTable() {
         userDaoHibernate.cleanUsersTable();
-
     }
 }
