@@ -62,7 +62,7 @@ public class UserDaoJDBCImpl implements UserDao {
     public void removeUserById(long id) {
         try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/baza_kata", "root", "roote");
              Statement statement = connection.createStatement()) {
-             statement.executeUpdate("DELETE FROM users WHERE id");
+            statement.executeUpdate("DELETE FROM users WHERE id");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -93,7 +93,7 @@ public class UserDaoJDBCImpl implements UserDao {
     public void cleanUsersTable() {
         try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/baza_kata", "root", "roote");
              Statement statement = connection.createStatement()) {
-             statement.executeUpdate("DELETE FROM users");
+            statement.executeUpdate("DELETE FROM users");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
