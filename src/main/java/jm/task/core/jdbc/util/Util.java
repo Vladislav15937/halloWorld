@@ -18,6 +18,8 @@ public class Util {
     private static final String URL = "jdbc:mysql://localhost/baza_kata";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "roote";
+    private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
+    private static final String HOST = "jdbc:mysql://localhost/baza_kata?useSSL=false&allowMultiQueries=true&serverTimezone=UTC";
     // реализуйте настройку соеденения с БД
     static Connection getConnection(){
         try (Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD)) {
@@ -25,17 +27,10 @@ public class Util {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
     }
-
-    private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
-    private static final String HOST = "jdbc:mysql://localhost/baza_kata?useSSL=false&allowMultiQueries=true&serverTimezone=UTC";
-
-
 
     public static SessionFactory getSessionFactory() {
         SessionFactory sessionFactory = null;
-
         try {
                      Configuration configuration = new Configuration()
                     .setProperty("hibernate.connection.driver_class", DRIVER)
